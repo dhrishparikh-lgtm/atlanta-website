@@ -2,261 +2,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#090909">
-    <meta name="description" content="Read the Discord community and Roblox roleplay rules for Atlanta Roleplay | VC Only.">
-    <title>Rules | Atlanta Roleplay</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Read the community and roleplay standards for Atlanta Roleplay.">
+  <title>Rules | Atlanta Roleplay</title>
+  <link rel="icon" href="assets/ARP_Logo_Updated.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-content">
-            <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
-            <div class="loader-line"></div>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Atlanta Roleplay home">
+        <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo" class="brand-logo">
+        <span class="brand-name">ATLANTA <b>ROLEPLAY</b><small>VC ONLY</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="siteNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="rules.html">Rules</a>
+        <a href="applications.html">Applications</a>
+        <a href="partnerships.html">Partnerships</a>
+        <a href="statistics.html">Statistics</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-join" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
+  </header>
 
-    <header class="site-header">
-        <div class="container nav-container">
-            <a class="brand" href="index.html">
-                <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
-                <span>ATLANTA <strong>ROLEPLAY</strong></span>
-            </a>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">COMMUNITY STANDARDS</p>
+        <h1>Know the <span class="accent">rules.</span></h1>
+        <p class="page-intro">These standards help keep Atlanta Roleplay organised, respectful, and enjoyable. Members are responsible for understanding and following the official rules.</p>
+      </div>
+    </section>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <section class="section">
+      <div class="container rules-layout">
+        <aside class="rules-sidebar">
+          <p class="eyebrow">ON THIS PAGE</p>
+          <a href="#community">Community conduct</a>
+          <a href="#roleplay">Roleplay standards</a>
+          <a href="#sessions">Session conduct</a>
+          <a href="#staff">Staff instructions</a>
+          <a href="#enforcement">Enforcement</a>
+        </aside>
 
-            <nav class="nav" id="nav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="leadership.html">Leadership</a>
-                <a href="rules.html" class="active">Rules</a>
-                <a href="applications.html">Applications</a>
-                <a href="partnerships.html">Partnerships</a>
-                <a href="statistics.html">Statistics</a>
-                <a href="contact.html">Contact</a>
-                <a class="nav-join" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord</a>
-            </nav>
+        <div class="rules-content">
+          <article class="rule-section" id="community">
+            <span class="rule-number">01</span>
+            <div>
+              <h2>Community conduct</h2>
+              <ul>
+                <li>Treat all members respectfully, regardless of rank or role.</li>
+                <li>Harassment, discrimination, threats, and targeted abuse are not acceptable.</li>
+                <li>Do not spam, flood channels, or intentionally disrupt conversations.</li>
+                <li>Follow Discord's Terms of Service and Community Guidelines.</li>
+                <li>Do not share private information or recordings without appropriate permission.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="rule-section" id="roleplay">
+            <span class="rule-number">02</span>
+            <div>
+              <h2>Roleplay standards</h2>
+              <ul>
+                <li>Keep actions and decisions realistic for the situation.</li>
+                <li>Do not intentionally ruin scenes or interfere with another player's roleplay.</li>
+                <li>Value fair play and cooperation over winning every situation.</li>
+                <li>Follow the session host's instructions and any announced scenario requirements.</li>
+                <li>Use voice chat appropriately and avoid unnecessary background noise.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="rule-section" id="sessions">
+            <span class="rule-number">03</span>
+            <div>
+              <h2>Session conduct</h2>
+              <ul>
+                <li>Join sessions prepared to follow the host's briefing and instructions.</li>
+                <li>Do not interrupt briefings or deliberately talk over others.</li>
+                <li>Use the correct in-game roles, teams, and equipment for the scenario.</li>
+                <li>Do not exploit game bugs or use unfair methods to gain an advantage.</li>
+                <li>Follow any additional rules announced for a specific session.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="rule-section" id="staff">
+            <span class="rule-number">04</span>
+            <div>
+              <h2>Staff instructions</h2>
+              <ul>
+                <li>Follow reasonable instructions from authorised staff during sessions and in Discord.</li>
+                <li>If you disagree with a moderation decision, raise the issue calmly through the appropriate channel.</li>
+                <li>Do not impersonate staff or falsely claim permissions you do not have.</li>
+                <li>Staff members are also expected to act professionally and treat members fairly.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="rule-section" id="enforcement">
+            <span class="rule-number">05</span>
+            <div>
+              <h2>Enforcement and appeals</h2>
+              <p>Rule violations may result in a warning, removal from a session, a restriction, or further moderation action depending on the circumstances and severity.</p>
+              <p>Do not attempt to evade moderation actions. If you believe a ban was issued incorrectly, use the official ban appeal form.</p>
+              <a class="button button-secondary" href="https://melonly.com/forms/7501860439312044032" target="_blank" rel="noopener noreferrer">Submit a ban appeal ↗</a>
+            </div>
+          </article>
+
+          <div class="notice-panel">
+            <strong>Important:</strong> This page is a general overview, not a replacement for the official rules posted in Discord. If the official rules differ, follow the official version.
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <main>
-        <section class="page-hero">
-            <div class="container reveal">
-                <span class="eyebrow">KNOW THE STANDARDS</span>
-                <h1>SERVER <span class="text-accent">RULES</span></h1>
-                <p>Every member is expected to follow these regulations in our Discord community and in-game roleplay.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow">SECTION 01</span>
-                    <h2>Discord <span class="text-accent">Community Rules</span></h2>
-                    <p>These rules apply to all members across Atlanta Roleplay's Discord server.</p>
-                </div>
-
-                <div class="rules-list">
-                    <article class="rule-card reveal">
-                        <span class="rule-number">01</span>
-                        <div>
-                            <h3>Nicknames</h3>
-                            <p>You are required to have your Roblox username as your Discord nickname. For example: <strong>Callsign | Roblox Username</strong>. If you are in a department, you must include your department callsign.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">02</span>
-                        <div>
-                            <h3>Drama</h3>
-                            <p>Please refrain from initiating or causing drama within Atlanta Roleplay. Keep personal arguments in direct messages and do not bring unnecessary conflict into the community.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">03</span>
-                        <div>
-                            <h3>Respect</h3>
-                            <p>All users must treat each other with respect in text channels, voice channels, and everywhere else within our server.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">04</span>
-                        <div>
-                            <h3>NSFW and Inappropriate Content</h3>
-                            <p>Do not post NSFW, explicit, or otherwise inappropriate content that may disturb or negatively affect community members. Violations may result in moderation.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">05</span>
-                        <div>
-                            <h3>Safety and Privacy</h3>
-                            <p>Do not share personal information belonging to yourself or others, including home addresses, phone numbers, or other private details.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">06</span>
-                        <div>
-                            <h3>Spamming</h3>
-                            <p>Do not spam messages, emojis, GIFs, or links. Avoid flooding channels with repeated or off-topic messages.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">07</span>
-                        <div>
-                            <h3>Advertising</h3>
-                            <p>Do not advertise other servers within Atlanta Roleplay or send unsolicited advertisements to our members through direct messages.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">08</span>
-                        <div>
-                            <h3>Alternate Accounts</h3>
-                            <p>The use of alternate accounts to participate in or gain an unfair advantage within the community is prohibited, especially when used to bypass server moderation.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow">SECTION 02</span>
-                    <h2>Roblox <span class="text-accent">Roleplay Rules</span></h2>
-                    <p>All players must maintain realistic, fair, and respectful roleplay while in-game.</p>
-                </div>
-
-                <div class="rules-list">
-                    <article class="rule-card reveal">
-                        <span class="rule-number">01</span>
-                        <div>
-                            <h3>Roblox Terms of Service</h3>
-                            <p>All players must comply with the <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846-Roblox-Terms-of-Use" target="_blank" rel="noopener noreferrer">Roblox Terms of Use</a> to participate in our roleplay community.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">02</span>
-                        <div>
-                            <h3>Fail Roleplay</h3>
-                            <p>All roleplay must maintain a realistic standard. Do not perform actions that would be considered unrealistic or break the roleplay experience.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">03</span>
-                        <div>
-                            <h3>Random Deathmatch (RDM)</h3>
-                            <p>Random Deathmatch is prohibited. You may not shoot or kill another player without a valid roleplay reason.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">04</span>
-                        <div>
-                            <h3>Vehicle Deathmatch (VDM)</h3>
-                            <p>Vehicle Deathmatch is prohibited. Do not intentionally ram or use a vehicle to attack other players or vehicles without a valid roleplay reason.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">05</span>
-                        <div>
-                            <h3>Fear Roleplay</h3>
-                            <p>Fear Roleplay is mandatory in situations involving threats or danger. Players must react realistically when threatened, injured, or outnumbered.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">06</span>
-                        <div>
-                            <h3>New Life Rule (NLR)</h3>
-                            <p>If you are killed or jailed, you may not return to the same scene or continue participating in that situation. Treat it as a new life.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">07</span>
-                        <div>
-                            <h3>Leaving to Avoid Punishment (LTAP)</h3>
-                            <p>Leaving, resetting, or disconnecting specifically to avoid staff action or active in-game consequences is considered LTAP. If you disconnect by mistake, rejoin and explain the situation to staff.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">08</span>
-                        <div>
-                            <h3>Metagaming</h3>
-                            <p>Do not use information your character could not realistically know in-game. Information obtained outside the roleplay must not be used to gain an advantage.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">09</span>
-                        <div>
-                            <h3>Safe Zones</h3>
-                            <p>Spawn points are safe zones. Engaging in combat or initiating roleplay conflicts in these locations may result in moderation.</p>
-                        </div>
-                    </article>
-
-                    <article class="rule-card reveal">
-                        <span class="rule-number">10</span>
-                        <div>
-                            <h3>Scene Interruption</h3>
-                            <p>Do not interrupt ongoing roleplay scenes, including traffic stops, pursuits, and other active situations. Allow scenes to proceed without unnecessary interference.</p>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="rules-warning reveal">
-                    <span class="warning-symbol">!</span>
-                    <div>
-                        <h3>Important Notice</h3>
-                        <p>Violations of these regulations may result in moderation or other appropriate staff action. Staff may review situations based on the available evidence and circumstances.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-cta">
-            <div class="container cta-content reveal">
-                <span class="eyebrow">NEED HELP?</span>
-                <h2>Contact <span class="text-accent">Our Staff</span></h2>
-                <p>If you have a question about the rules or need help with a situation, contact the staff team through our Discord server.</p>
-                <a class="button button-primary" href="https://discord.com/channels/1538727238290251886/1538727239850659909" target="_blank" rel="noopener noreferrer">Get Support</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <a class="brand footer-brand" href="index.html">
-                <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
-                <span>ATLANTA <strong>ROLEPLAY</strong></span>
-            </a>
-
-            <p>Atlanta Roleplay | VC Only. Built for the community.</p>
-
-            <div class="footer-links">
-                <a href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Discord</a>
-                <a href="https://www.roblox.com/share/g/12836689" target="_blank" rel="noopener noreferrer">Roblox Group</a>
-            </div>
-
-            <p class="copyright">&copy; <span id="year"></span> Atlanta Roleplay. All rights reserved.</p>
+    <section class="section section-muted">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <p class="eyebrow">STAY INFORMED</p>
+            <h2>Need clarification?</h2>
+            <p>Visit our Discord server and ask the appropriate staff team if you are unsure about a rule.</p>
+          </div>
+          <a class="button button-primary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Open Discord ↗</a>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">ATLANTA ROLEPLAY <span>VC ONLY</span></a>
+      <p>Built for realistic roleplay. Powered by community.</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="applications.html">Applications</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="copyright">© <span data-year></span> Atlanta Roleplay. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
