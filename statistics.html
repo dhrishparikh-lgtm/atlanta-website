@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="View Discord status and community information for Atlanta Roleplay | VC Only.">
+    <title>Statistics | Atlanta Roleplay</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <a class="brand" href="index.html">
+                <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
+                <span>ATLANTA <strong>ROLEPLAY</strong></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="leadership.html">Leadership</a>
+                <a href="rules.html">Rules</a>
+                <a href="applications.html">Applications</a>
+                <a href="partnerships.html">Partnerships</a>
+                <a href="statistics.html" class="active">Statistics</a>
+                <a href="contact.html">Contact</a>
+                <a class="nav-join" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container reveal">
+                <span class="eyebrow">COMMUNITY OVERVIEW</span>
+                <h1>SERVER <span class="text-accent">STATISTICS</span></h1>
+                <p>Check the available live Discord status information and find your way into the Atlanta Roleplay community.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">LIVE DISCORD DATA</span>
+                    <h2>Community <span class="text-accent">Status</span></h2>
+                    <p>These values are retrieved from the public Discord server widget when it is available.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card reveal">
+                        <span class="stat-label">SERVER STATUS</span>
+                        <div class="stat-value" id="serverStatus">LOADING</div>
+                        <p id="statusMessage">Checking the Discord server widget...</p>
+                    </article>
+
+                    <article class="stat-card reveal">
+                        <span class="stat-label">MEMBERS ONLINE</span>
+                        <div class="stat-value" id="onlineCount">—</div>
+                        <p>Online count reported by Discord</p>
+                    </article>
+
+                    <article class="stat-card reveal">
+                        <span class="stat-label">TOTAL MEMBERS</span>
+                        <div class="stat-value" id="memberCount">—</div>
+                        <p>Total membership is shown when a supported data source is available.</p>
+                    </article>
+                </div>
+
+                <div class="stats-update reveal">
+                    <span class="status-indicator"></span>
+                    <p id="lastUpdated">Waiting for the first status check...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">COMMUNITY INFORMATION</span>
+                    <h2>About the <span class="text-accent">Numbers</span></h2>
+                </div>
+
+                <div class="info-grid">
+                    <article class="info-card reveal">
+                        <h3>Online Members</h3>
+                        <p>The online figure reflects the presence count provided by Discord's public widget. It may not include every detail available inside Discord.</p>
+                    </article>
+
+                    <article class="info-card reveal">
+                        <h3>Total Membership</h3>
+                        <p>The total member count may remain unavailable because the public widget does not necessarily provide a total membership figure.</p>
+                    </article>
+
+                    <article class="info-card reveal">
+                        <h3>Server Availability</h3>
+                        <p>If the widget is disabled or cannot be reached, the page will show that live information is unavailable. This does not necessarily mean the Discord server is offline.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-cta">
+            <div class="container cta-content reveal">
+                <span class="eyebrow">BE PART OF ARP</span>
+                <h2>Join the <span class="text-accent">Community</span></h2>
+                <p>Connect with the community directly on Discord to see the latest activity and announcements.</p>
+                <a class="button button-primary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Our Discord</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a class="brand footer-brand" href="index.html">
+                <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
+                <span>ATLANTA <strong>ROLEPLAY</strong></span>
+            </a>
+
+            <p>Atlanta Roleplay | VC Only. Built for the community.</p>
+
+            <div class="footer-links">
+                <a href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Discord</a>
+                <a href="https://www.roblox.com/share/g/12836689" target="_blank" rel="noopener noreferrer">Roblox Group</a>
+            </div>
+
+            <p class="copyright">&copy; <span id="year"></span> Atlanta Roleplay. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
