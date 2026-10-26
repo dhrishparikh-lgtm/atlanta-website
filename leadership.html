@@ -2,421 +2,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Meet the Board of Directors and development team of Atlanta Roleplay.">
-    <title>Board of Directors | Atlanta Roleplay</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .leadership-page {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 24px 80px;
-        }
-
-        .leadership-hero {
-            text-align: center;
-            padding: 45px 20px 55px;
-        }
-
-        .leadership-hero .eyebrow {
-            color: #e32636;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 0.78rem;
-            font-weight: 800;
-        }
-
-        .leadership-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            margin: 15px 0;
-            font-weight: 900;
-        }
-
-        .leadership-hero p {
-            max-width: 650px;
-            margin: 0 auto;
-            color: #b9b9b9;
-            line-height: 1.8;
-        }
-
-        .leadership-section {
-            margin-top: 45px;
-        }
-
-        .section-heading {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 24px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #292929;
-        }
-
-        .section-heading .heading-line {
-            width: 5px;
-            height: 30px;
-            border-radius: 4px;
-            background: #e32636;
-        }
-
-        .section-heading h2 {
-            margin: 0;
-            font-size: 1.65rem;
-        }
-
-        .section-heading p {
-            margin: 5px 0 0;
-            color: #929292;
-            font-size: 0.9rem;
-        }
-
-        .leadership-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .leader-card {
-            position: relative;
-            overflow: hidden;
-            padding: 25px;
-            border: 1px solid #292929;
-            border-radius: 12px;
-            background: linear-gradient(145deg, #171717, #101010);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .leader-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--role-color);
-        }
-
-        .leader-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--role-color);
-        }
-
-        .leader-card .role-label {
-            display: inline-flex;
-            align-items: center;
-            padding: 7px 10px;
-            border: 1px solid color-mix(in srgb, var(--role-color) 50%, transparent);
-            border-radius: 6px;
-            background: color-mix(in srgb, var(--role-color) 12%, transparent);
-            color: var(--role-color);
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.7px;
-            text-transform: uppercase;
-        }
-
-        .leader-card h3 {
-            margin: 18px 0 7px;
-            font-size: 1.2rem;
-            overflow-wrap: anywhere;
-        }
-
-        .leader-card .role-description {
-            margin: 0;
-            color: #a5a5a5;
-            font-size: 0.9rem;
-            line-height: 1.65;
-        }
-
-        .role-founder { --role-color: #f2c14e; }
-        .role-cofounder { --role-color: #e8a05a; }
-        .role-assistant-founder { --role-color: #d6a4ff; }
-        .role-director { --role-color: #ff6878; }
-        .role-deputy { --role-color: #ff9566; }
-        .role-assistant-director { --role-color: #ffb6a0; }
-        .role-head-dev { --role-color: #62b6ff; }
-        .role-senior-dev { --role-color: #69d6c5; }
-        .role-developer { --role-color: #a4df80; }
-        .role-junior-dev { --role-color: #b5b5c9; }
-        .role-bot-dev { --role-color: #9b8cff; }
-        .role-website-dev { --role-color: #ff83c6; }
-
-        .developer-note {
-            margin-top: 24px;
-            padding: 18px 20px;
-            border: 1px solid #292929;
-            border-radius: 10px;
-            background: #131313;
-            color: #b7b7b7;
-            line-height: 1.7;
-            font-size: 0.9rem;
-        }
-
-        .leadership-footer {
-            margin-top: 55px;
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #302020;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #1b1012, #111111);
-        }
-
-        .leadership-footer h2 {
-            margin: 0 0 10px;
-        }
-
-        .leadership-footer p {
-            color: #b9b9b9;
-            line-height: 1.7;
-        }
-
-        .leadership-footer a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-            padding: 12px 20px;
-            border-radius: 7px;
-            background: #e32636;
-            color: white;
-            text-decoration: none;
-            font-weight: 800;
-        }
-
-        .leadership-footer a:hover {
-            background: #bd1928;
-        }
-
-        @media (max-width: 850px) {
-            .leadership-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 560px) {
-            .leadership-page {
-                padding: 35px 16px 55px;
-            }
-
-            .leadership-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .leadership-hero {
-                padding: 30px 5px 40px;
-            }
-
-            .section-heading h2 {
-                font-size: 1.35rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Meet the leadership and development team behind Atlanta Roleplay.">
+  <title>Leadership | Atlanta Roleplay</title>
+  <link rel="icon" href="assets/ARP_Logo_Updated.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-<header class="site-header">
-    <div class="nav-container">
-        <a class="logo" href="index.html" aria-label="Atlanta Roleplay home">
-            <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
-        </a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
-
-        <nav class="nav" id="nav" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="leadership.html" class="active">Leadership</a>
-            <a href="rules.html">Rules</a>
-            <a href="applications.html">Applications</a>
-            <a href="partnerships.html">Partnerships</a>
-            <a href="statistics.html">Statistics</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer" class="nav-join">Join Discord</a>
-        </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Atlanta Roleplay home">
+        <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo" class="brand-logo">
+        <span class="brand-name">ATLANTA <b>ROLEPLAY</b><small>VC ONLY</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="siteNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="rules.html">Rules</a>
+        <a href="applications.html">Applications</a>
+        <a href="partnerships.html">Partnerships</a>
+        <a href="statistics.html">Statistics</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-join" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main class="leadership-page">
-    <section class="leadership-hero">
-        <span class="eyebrow">Atlanta Roleplay | VC Only</span>
-        <h1>Board of Directors</h1>
-        <p>
-            Meet the leadership team responsible for guiding Atlanta Roleplay,
-            managing the community, and supporting its continued development.
-        </p>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">THE PEOPLE BEHIND ARP</p>
+        <h1>Meet the <span class="accent">leadership.</span></h1>
+        <p class="page-intro">The people responsible for guiding the community, supporting its members, and maintaining the systems behind Atlanta Roleplay.</p>
+      </div>
     </section>
 
-    <section class="leadership-section">
+    <section class="section">
+      <div class="container">
         <div class="section-heading">
-            <span class="heading-line"></span>
-            <div>
-                <h2>Executive Leadership</h2>
-                <p>Community direction, oversight, and management.</p>
-            </div>
+          <p class="eyebrow">LEADERSHIP TEAM</p>
+          <h2>Board of Directors</h2>
+          <p>Community leadership and management.</p>
         </div>
 
         <div class="leadership-grid">
-            <article class="leader-card role-founder">
-                <span class="role-label">Founder</span>
-                <h3>Vtorrew</h3>
-                <p class="role-description">Co-founder of Atlanta Roleplay's leadership team.</p>
-            </article>
-
-            <article class="leader-card role-founder">
-                <span class="role-label">Founder</span>
-                <h3>Josue</h3>
-                <p class="role-description">Co-founder of Atlanta Roleplay's leadership team.</p>
-            </article>
-
-            <article class="leader-card role-cofounder">
-                <span class="role-label">Co-Founder</span>
-                <h3>4t9eg</h3>
-                <p class="role-description">Supports executive leadership and community operations.</p>
-            </article>
-
-            <article class="leader-card role-assistant-founder">
-                <span class="role-label">Assistant Founder</span>
-                <h3>EminentSantoFlow</h3>
-                <p class="role-description">Assists with leadership responsibilities and oversight.</p>
-            </article>
-
-            <article class="leader-card role-assistant-founder">
-                <span class="role-label">Assistant Founder</span>
-                <h3>River</h3>
-                <p class="role-description">Assists with leadership responsibilities and oversight.</p>
-            </article>
-
-            <article class="leader-card role-director">
-                <span class="role-label">Director</span>
-                <h3>zu8._.</h3>
-                <p class="role-description">Oversees community operations and leadership coordination.</p>
-            </article>
-
-            <article class="leader-card role-deputy">
-                <span class="role-label">Deputy Director</span>
-                <h3>ARegularGuy</h3>
-                <p class="role-description">Supports the Director and helps coordinate operations.</p>
-            </article>
-
-            <article class="leader-card role-assistant-director">
-                <span class="role-label">Assistant Director</span>
-                <h3>Dragonslayer_14302</h3>
-                <p class="role-description">Assists with day-to-day leadership and community oversight.</p>
-            </article>
+          <article class="leader-card leader-top">
+            <span class="role-tag role-founder">FOUNDER</span>
+            <h3>Vtorrew</h3>
+            <p class="leader-description">Founder</p>
+          </article>
+          <article class="leader-card leader-top">
+            <span class="role-tag role-founder">FOUNDER</span>
+            <h3>Josue</h3>
+            <p class="leader-description">Founder</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-cofounder">CO-FOUNDER</span>
+            <h3>4t9eg</h3>
+            <p class="leader-description">Co-Founder</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-assistant">ASSISTANT FOUNDER</span>
+            <h3>EminentSantoFlow</h3>
+            <p class="leader-description">Assistant Founder</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-assistant">ASSISTANT FOUNDER</span>
+            <h3>River</h3>
+            <p class="leader-description">Assistant Founder</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-director">DIRECTOR</span>
+            <h3>zu8._.</h3>
+            <p class="leader-description">Director</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-deputy">DEPUTY DIRECTOR</span>
+            <h3>ARegularGuy</h3>
+            <p class="leader-description">Deputy Director</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-deputy">ASSISTANT DIRECTOR</span>
+            <h3>Dragonslayer_14302</h3>
+            <p class="leader-description">Assistant Director</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section class="leadership-section">
+    <section class="section section-muted">
+      <div class="container">
         <div class="section-heading">
-            <span class="heading-line"></span>
-            <div>
-                <h2>Development Department</h2>
-                <p>Building and maintaining Atlanta Roleplay's technical systems.</p>
-            </div>
+          <p class="eyebrow">TECHNICAL TEAM</p>
+          <h2>Development department</h2>
+          <p>Maintaining and improving the technical side of the community.</p>
         </div>
 
         <div class="leadership-grid">
-            <article class="leader-card role-head-dev">
-                <span class="role-label">Head Developer</span>
-                <h3>enviksy</h3>
-                <p class="role-description">Bot development and technical leadership.</p>
-            </article>
-
-            <article class="leader-card role-head-dev">
-                <span class="role-label">Head Developer</span>
-                <h3>ToothierFox939k</h3>
-                <p class="role-description">Leads development work and technical projects.</p>
-            </article>
-
-            <article class="leader-card role-senior-dev">
-                <span class="role-label">Senior Developer</span>
-                <h3>kingaparikha</h3>
-                <p class="role-description">Discord bot development and website development.</p>
-            </article>
-
-            <article class="leader-card role-senior-dev">
-                <span class="role-label">Senior Developer</span>
-                <h3>gameschannel2022</h3>
-                <p class="role-description">Website development and site maintenance.</p>
-            </article>
-
-            <article class="leader-card role-developer">
-                <span class="role-label">Developer</span>
-                <h3>Ops2228</h3>
-                <p class="role-description">Supports the department's technical development work.</p>
-            </article>
-
-            <article class="leader-card role-junior-dev">
-                <span class="role-label">Junior Developer</span>
-                <h3>godzillamaster0101</h3>
-                <p class="role-description">Assists with development tasks and technical projects.</p>
-            </article>
-
-            <article class="leader-card role-junior-dev">
-                <span class="role-label">Junior Developer</span>
-                <h3>cooldudde_4</h3>
-                <p class="role-description">Assists with development tasks and technical projects.</p>
-            </article>
+          <article class="leader-card">
+            <span class="role-tag role-headdev">HEAD DEVELOPER</span>
+            <h3>enviksy</h3>
+            <p class="leader-description">Bot Development</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-headdev">HEAD DEVELOPER</span>
+            <h3>ToothierFox939k</h3>
+            <p class="leader-description">Development</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-seniordev">SENIOR DEVELOPER</span>
+            <h3>kingaparikha</h3>
+            <p class="leader-description">Bot and Website Development</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-seniordev">SENIOR DEVELOPER</span>
+            <h3>gameschannel2022</h3>
+            <p class="leader-description">Website Development</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-developer">DEVELOPER</span>
+            <h3>Ops2228</h3>
+            <p class="leader-description">Development</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-juniordev">JUNIOR DEVELOPER</span>
+            <h3>godzillamaster0101</h3>
+            <p class="leader-description">Junior Development</p>
+          </article>
+          <article class="leader-card">
+            <span class="role-tag role-juniordev">JUNIOR DEVELOPER</span>
+            <h3>cooldudde_4</h3>
+            <p class="leader-description">Junior Development</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <section class="leadership-section">
+    <section class="section">
+      <div class="container">
         <div class="section-heading">
-            <span class="heading-line"></span>
-            <div>
-                <h2>Development Specialisations</h2>
-                <p>Technical roles organised by area of responsibility.</p>
+          <p class="eyebrow">SPECIALISATIONS</p>
+          <h2>Development roles</h2>
+          <p>Focused responsibilities within the technical team.</p>
+        </div>
+
+        <div class="card-grid two">
+          <article class="info-card specialisation-card">
+            <span class="specialisation-label">SYSTEMS & AUTOMATION</span>
+            <h3>Bot Developers</h3>
+            <p>Responsible for building, maintaining, and improving the bots and automated systems used by Atlanta Roleplay.</p>
+            <div class="name-list">
+              <span>enviksy</span>
+              <span>kingaparikha</span>
             </div>
+          </article>
+          <article class="info-card specialisation-card">
+            <span class="specialisation-label">WEB DESIGN & MAINTENANCE</span>
+            <h3>Website Developers</h3>
+            <p>Responsible for the design, functionality, and maintenance of the Atlanta Roleplay website.</p>
+            <div class="name-list">
+              <span>kingaparikha</span>
+              <span>gameschannel2022</span>
+            </div>
+          </article>
         </div>
 
-        <div class="leadership-grid">
-            <article class="leader-card role-bot-dev">
-                <span class="role-label">Bot Developers</span>
-                <h3>enviksy</h3>
-                <p class="role-description">Discord bot development and technical automation.</p>
-            </article>
-
-            <article class="leader-card role-bot-dev">
-                <span class="role-label">Bot Developers</span>
-                <h3>kingaparikha</h3>
-                <p class="role-description">Discord bot development and bot system maintenance.</p>
-            </article>
-
-            <article class="leader-card role-website-dev">
-                <span class="role-label">Website Developers</span>
-                <h3>kingaparikha</h3>
-                <p class="role-description">Website development and site improvements.</p>
-            </article>
-
-            <article class="leader-card role-website-dev">
-                <span class="role-label">Website Developers</span>
-                <h3>gameschannel2022</h3>
-                <p class="role-description">Website development and site maintenance.</p>
-            </article>
-        </div>
-
-        <div class="developer-note">
-            <strong>Development structure:</strong> Head Developer, Senior Developer,
-            Developer, and Junior Developer represent the department hierarchy.
-            Bot Developers and Website Developers identify technical specialisations,
-            so a developer may appear in more than one section.
-        </div>
+        <p class="leadership-note">Leadership and development assignments may change as the community grows. For the latest updates, check the official Discord server.</p>
+      </div>
     </section>
 
-    <section class="leadership-footer">
-        <h2>Interested in joining the team?</h2>
-        <p>Visit the applications page to explore opportunities with Atlanta Roleplay.</p>
-        <a href="applications.html">View Applications</a>
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <p class="eyebrow">JOIN THE TEAM</p>
+            <h2>Interested in contributing?</h2>
+            <p>Join the Discord community to learn about available opportunities and announcements.</p>
+          </div>
+          <a class="button button-primary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord ↗</a>
+        </div>
+      </div>
     </section>
-</main>
+  </main>
 
-<footer class="site-footer">
-    <p>&copy; <span id="currentYear"></span> Atlanta Roleplay | VC Only. All rights reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">ATLANTA ROLEPLAY <span>VC ONLY</span></a>
+      <p>Built for realistic roleplay. Powered by community.</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="rules.html">Rules</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p class="copyright">© <span data-year></span> Atlanta Roleplay. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
