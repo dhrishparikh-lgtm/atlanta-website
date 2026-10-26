@@ -2,150 +2,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#090909">
-    <meta name="description" content="Contact Atlanta Roleplay | VC Only through Discord, support, or our Roblox group.">
-    <title>Contact | Atlanta Roleplay</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Contact Atlanta Roleplay through Discord for support, questions, and community enquiries.">
+  <title>Contact | Atlanta Roleplay</title>
+  <link rel="icon" href="assets/ARP_Logo_Updated.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-content">
-            <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
-            <div class="loader-line"></div>
-        </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Atlanta Roleplay home">
+        <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo" class="brand-logo">
+        <span class="brand-name">ATLANTA <b>ROLEPLAY</b><small>VC ONLY</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="siteNav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="rules.html">Rules</a>
+        <a href="applications.html">Applications</a>
+        <a href="partnerships.html">Partnerships</a>
+        <a href="statistics.html">Statistics</a>
+        <a href="contact.html">Contact</a>
+        <a class="nav-join" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-  
-<header class="site-header">
-    <div class="nav-container">
-        <a class="logo" href="index.html" aria-label="Atlanta Roleplay Home">
-            <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay">
-        </a>
+  </header>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">GET IN TOUCH</p>
+        <h1>Let's <span class="accent">talk.</span></h1>
+        <p class="page-intro">Have a question, need support, or want to discuss a partnership? Use the appropriate official channel to contact Atlanta Roleplay.</p>
+      </div>
+    </section>
 
-        <nav class="nav" id="nav" aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="rules.html">Rules</a>
-            <a href="applications.html">Applications</a>
-            <a href="partnerships.html">Partnerships</a>
-            <a href="statistics.html">Statistics</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer" class="nav-join">Join Discord</a>
-        </nav>
-    </div>
-</header>
-
-
-    <main>
-        <section class="page-hero">
-            <div class="container reveal">
-                <span class="eyebrow">GET IN TOUCH</span>
-                <h1>CONTACT <span class="text-accent">US</span></h1>
-                <p>Need assistance, have a question, or want to connect with Atlanta Roleplay? Choose the most appropriate contact option below.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow">CONTACT OPTIONS</span>
-                    <h2>How Can We <span class="text-accent">Help?</span></h2>
-                    <p>For the quickest assistance, join our Discord and contact the appropriate team.</p>
-                </div>
-
-                <div class="contact-grid">
-                    <article class="contact-card reveal">
-                        <div class="contact-icon">01</div>
-                        <span class="eyebrow">GENERAL COMMUNITY</span>
-                        <h3>Discord Server</h3>
-                        <p>Join the community to view announcements, meet members, and find the appropriate place for your questions.</p>
-                        <a class="button button-primary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord</a>
-                    </article>
-
-                    <article class="contact-card reveal">
-                        <div class="contact-icon">02</div>
-                        <span class="eyebrow">HELP AND ASSISTANCE</span>
-                        <h3>Support Channel</h3>
-                        <p>Need help from staff or want to ask about an issue? Open our support channel and follow the server's ticket instructions.</p>
-                        <a class="button button-primary" href="https://discord.com/channels/1538727238290251886/1538727239850659909" target="_blank" rel="noopener noreferrer">Get Support</a>
-                    </article>
-
-                    <article class="contact-card reveal">
-                        <div class="contact-icon">03</div>
-                        <span class="eyebrow">ROBLOX COMMUNITY</span>
-                        <h3>Roblox Group</h3>
-                        <p>Visit our Roblox group to connect with Atlanta Roleplay through the Roblox platform.</p>
-                        <a class="button button-primary" href="https://www.roblox.com/share/g/12836689" target="_blank" rel="noopener noreferrer">Visit Roblox Group</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <span class="eyebrow">CHOOSE THE RIGHT PLACE</span>
-                    <h2>Quick <span class="text-accent">Links</span></h2>
-                </div>
-
-                <div class="info-grid">
-                    <article class="info-card reveal">
-                        <h3>Staff Applications</h3>
-                        <p>Interested in joining the staff team? Submit the official staff application form.</p>
-                        <a class="text-link" href="applications.html">View Applications</a>
-                    </article>
-
-                    <article class="info-card reveal">
-                        <h3>Ban Appeals</h3>
-                        <p>Request a review of a ban through the official ban appeal form.</p>
-                        <a class="text-link" href="https://melonly.com/forms/7501860439312044032" target="_blank" rel="noopener noreferrer">Submit Ban Appeal</a>
-                    </article>
-
-                    <article class="info-card reveal">
-                        <h3>Partnership Requests</h3>
-                        <p>Review the partnership requirements before opening a support ticket.</p>
-                        <a class="text-link" href="partnerships.html">View Requirements</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-cta">
-            <div class="container cta-content reveal">
-                <span class="eyebrow">ATLANTA ROLEPLAY | VC ONLY</span>
-                <h2>We'll See You <span class="text-accent">In-Game.</span></h2>
-                <p>Join our Discord community to stay informed and get connected with Atlanta Roleplay.</p>
-                <a class="button button-primary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Atlanta Roleplay</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container footer-content">
-            <a class="brand footer-brand" href="index.html">
-                <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo">
-                <span>ATLANTA <strong>ROLEPLAY</strong></span>
-            </a>
-
-            <p>Atlanta Roleplay | VC Only. Built for the community.</p>
-
-            <div class="footer-links">
-                <a href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Discord</a>
-                <a href="https://www.roblox.com/share/g/12836689" target="_blank" rel="noopener noreferrer">Roblox Group</a>
-            </div>
-
-            <p class="copyright">&copy; <span id="year"></span> Atlanta Roleplay. All rights reserved.</p>
+    <section class="section">
+      <div class="container">
+        <div class="card-grid two">
+          <article class="contact-card">
+            <span class="contact-icon">01</span>
+            <p class="eyebrow">GENERAL ENQUIRIES</p>
+            <h2>Join our Discord</h2>
+            <p>For general questions, announcements, and community information, start with our official Discord server.</p>
+            <a class="text-link" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord ↗</a>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon">02</span>
+            <p class="eyebrow">MEMBER SUPPORT</p>
+            <h2>Open a support ticket</h2>
+            <p>For assistance that needs staff attention, use the support channel and follow the ticket instructions provided there.</p>
+            <a class="text-link" href="https://discord.com/channels/1538727238290251886/1538727239850659909" target="_blank" rel="noopener noreferrer">Go to support ↗</a>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon">03</span>
+            <p class="eyebrow">PARTNERSHIPS</p>
+            <h2>Work with ARP</h2>
+            <p>Read our requirements before contacting the team about a potential partnership.</p>
+            <a class="text-link" href="partnerships.html">View requirements ↗</a>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon">04</span>
+            <p class="eyebrow">BAN APPEALS</p>
+            <h2>Request a review</h2>
+            <p>If you believe a ban was issued incorrectly, submit an appeal using the official form.</p>
+            <a class="text-link" href="https://melonly.com/forms/7501860439312044032" target="_blank" rel="noopener noreferrer">Open appeal form ↗</a>
+          </article>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="section section-muted">
+      <div class="container">
+        <div class="notice-panel">
+          <strong>Please remember:</strong> Be respectful when contacting staff. Include the relevant details so the team can understand your question, and avoid opening multiple tickets for the same issue.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <p class="eyebrow">ATLANTA ROLEPLAY</p>
+            <h2>We'll see you in the server.</h2>
+            <p>Join the community to stay informed and get in touch with the team.</p>
+          </div>
+          <a class="button button-primary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="index.html">ATLANTA ROLEPLAY <span>VC ONLY</span></a>
+      <p>Built for realistic roleplay. Powered by community.</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="rules.html">Rules</a>
+        <a href="partnerships.html">Partnerships</a>
+      </div>
+      <p class="copyright">© <span data-year></span> Atlanta Roleplay. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
