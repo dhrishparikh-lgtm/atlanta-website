@@ -868,3 +868,203 @@ ul {
         transform: none;
     }
 }
+
+/* GLOBAL NAVIGATION, BUTTONS AND LINK STYLING */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(9, 9, 9, 0.97);
+    border-bottom: 1px solid rgba(227, 38, 54, 0.3);
+    backdrop-filter: blur(14px);
+}
+
+.nav-container {
+    position: relative;
+}
+
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #ffffff;
+    background: rgba(227, 38, 54, 0.16);
+}
+
+.nav a.active {
+    box-shadow: inset 0 -2px 0 #e32636;
+}
+
+.nav .nav-join {
+    padding: 11px 17px;
+    border: 1px solid #e32636;
+    border-radius: 7px;
+    background: #e32636;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.nav .nav-join:hover {
+    background: #bd1928;
+    border-color: #bd1928;
+    transform: translateY(-2px);
+}
+
+/* PRIMARY BUTTONS */
+
+a.button,
+button.button,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 13px 22px;
+    border: 1px solid #e32636;
+    border-radius: 8px;
+    background: #e32636;
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+a.button:hover,
+button.button:hover,
+.button:hover {
+    background: #bd1928;
+    border-color: #bd1928;
+    color: #ffffff !important;
+    box-shadow: 0 7px 22px rgba(227, 38, 54, 0.24);
+    transform: translateY(-2px);
+}
+
+a.button:focus-visible,
+button.button:focus-visible,
+.nav a:focus-visible,
+.text-link:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* MAKE TEXT LINKS LOOK LIKE SECONDARY BUTTONS */
+
+a.text-link,
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border: 1px solid rgba(227, 38, 54, 0.7);
+    border-radius: 7px;
+    background: rgba(227, 38, 54, 0.1);
+    color: #ff6673 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+a.text-link:hover,
+.text-link:hover {
+    background: #e32636;
+    border-color: #e32636;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* KEEP BUTTONS READABLE INSIDE CARDS */
+
+.application-card .button,
+.contact-card .button,
+.cta-content .button {
+    margin-top: 18px;
+}
+
+.small-note {
+    margin-top: 18px;
+    color: #b8b8b8;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 850px) {
+    .nav-container {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1002;
+        cursor: pointer;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 16px;
+        background: #101010;
+        border: 1px solid rgba(227, 38, 54, 0.35);
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 14px;
+        border-radius: 6px;
+    }
+
+    .nav .nav-join {
+        justify-content: center;
+        margin-top: 5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav a,
+    .button,
+    .text-link {
+        transition: none;
+    }
+}
