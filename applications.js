@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const submit = document.getElementById("applicationSubmit");
   if (!form || !message || !submit) return;
 
-  const apiBase = (window.ARP_CONFIG?.API_BASE_URL || "").replace(/\/$/, "");
+  const apiBase = (window.ARP_CONFIG?.API_BASE_URL || "https://atlanta-website-y293.onrender.com").trim().replace(/\/$/, "");
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (!apiBase || apiBase.includes("REPLACE-WITH-YOUR-BACKEND-DOMAIN")) {
+    if (!apiBase || !/^https:\/\//i.test(apiBase) || apiBase.includes("REPLACE-WITH-YOUR-BACKEND-DOMAIN")) {
       message.textContent = "The application system is not connected yet. The website administrator must configure the backend URL.";
       message.dataset.state = "error";
       return;
