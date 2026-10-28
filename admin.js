@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const base = (window.ARP_CONFIG?.API_BASE_URL || "").replace(/\/$/, "");
+  const base = (window.ARP_CONFIG?.API_BASE_URL || "https://atlanta-website-y293.onrender.com").trim().replace(/\/$/, "");
   const loginPanel = document.getElementById("loginPanel");
   const dashboard = document.getElementById("dashboard");
   const message = document.getElementById("adminMessage");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!response.ok) throw new Error(data.error || "Request failed.");
     return data;
   };
-  if (!base || base.includes("REPLACE-WITH-YOUR-BACKEND-DOMAIN")) {
+  if (!base || !/^https:\/\//i.test(base) || base.includes("REPLACE-WITH-YOUR-BACKEND-DOMAIN")) {
     setMessage(message, "Backend URL has not been configured in api-config.js.", "error");
     loginButton.disabled = true;
     return;
