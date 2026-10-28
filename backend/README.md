@@ -29,7 +29,7 @@ Use a Node.js host that supports persistent storage, such as a Railway service w
 - Health check: `/health`
 - Attach a persistent volume and set `DATABASE_PATH` to a location on that volume, for example `/data/arp.sqlite`.
 - Add all variables from `.env.example` in the host's Variables/Environment panel. Never commit a real `.env` file.
-- `FRONTEND_URL` must be the exact public website origin, without a trailing slash.
+- `FRONTEND_URL` must be the public website base URL without a trailing slash. For a GitHub Pages project site, include the repository path, e.g. `https://USERNAME.github.io/atlanta-website`. CORS checks the origin automatically while OAuth redirects back to the full path.
 - `API_PUBLIC_URL` must be the backend's public HTTPS origin, without a trailing slash.
 - `DISCORD_REDIRECT_URI` must equal `API_PUBLIC_URL/auth/discord/callback`.
 - Use a random `SESSION_SECRET` with at least 32 characters.
