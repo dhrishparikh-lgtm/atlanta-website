@@ -32,6 +32,19 @@ CREATE TABLE IF NOT EXISTS site_content (
   key TEXT PRIMARY KEY, value TEXT NOT NULL
 );
 `);
+const existingColumns = new Set(db.prepare("PRAGMA table_info(applications)").all().map(column => column.name));
+const addedColumns = {
+  preferredArea: "TEXT NOT NULL DEFAULT 'Not specified'",
+  priorStaff: "TEXT NOT NULL DEFAULT 'Not specified'",
+  rulesRead: "TEXT NOT NULL DEFAULT 'Not specified'",
+  strengths: "TEXT NOT NULL DEFAULT ''",
+  friendScenario: "TEXT NOT NULL DEFAULT ''",
+  teamwork: "TEXT NOT NULL DEFAULT ''",
+  activityNotes: "TEXT NOT NULL DEFAULT ''"
+};
+for (const [column, definition] of Object.entries(addedColumns)) {
+  if (!existingColumns.has(column)) db.exec("ALTER TABLE applications ADD COLUMN " + column + " " + definition);
+}
 const defaults = {
   homeHeadline: "Welcome to Atlanta Roleplay",
   homeIntro: "A community built around organised roleplay, active staff, and a better experience for every member.",
