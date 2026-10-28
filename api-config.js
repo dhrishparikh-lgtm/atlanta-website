@@ -1,0 +1,3 @@
+window.ARP_CONFIG = {
+  API_BASE_URL: "https://REPLACE-WITH-YOUR-BACKEND-DOMAIN"
+};
