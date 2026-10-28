@@ -95,6 +95,7 @@ function validateString(value, label, max, min = 1) {
   if (cleaned.length > max) return label + " must be " + max + " characters or fewer.";
   return null;
 }
+app.get("/", (_req, res) => res.json({ name: "Atlanta Roleplay API", ok: true, health: "/health" }));
 app.get("/health", (_req, res) => res.json({ ok: true }));
 app.get("/auth/discord", (req, res) => {
   const state = crypto.randomBytes(24).toString("hex");
