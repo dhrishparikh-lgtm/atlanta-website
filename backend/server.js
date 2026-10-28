@@ -12,7 +12,7 @@ import path from "node:path";
 const required = ["FRONTEND_URL", "API_PUBLIC_URL", "DISCORD_CLIENT_ID", "DISCORD_CLIENT_SECRET", "DISCORD_REDIRECT_URI", "DISCORD_BOT_TOKEN", "DISCORD_GUILD_ID", "SESSION_SECRET"];
 for (const key of required) if (!process.env[key]) throw new Error("Missing required environment variable: " + key);
 if (process.env.SESSION_SECRET.length < 32) throw new Error("SESSION_SECRET must be at least 32 characters.");
-const frontendUrl = process.env.FRONTEND_URL.replace(/\/$/, "");
+const frontendUrl = process.env.FRONTEND_URL.replace(/\/$/, "");\nconst frontendOrigin = new URL(frontendUrl).origin;
 const apiPublicUrl = process.env.API_PUBLIC_URL.replace(/\/$/, "");
 const adminRoleIds = new Set((process.env.ADMIN_ROLE_IDS || "1538727238483050664,1538727238441369677").split(",").map(x => x.trim()).filter(Boolean));
 const app = express();
@@ -43,7 +43,7 @@ for (const [key, value] of Object.entries(defaults)) insertContent.run(key, valu
 const getContent = () => Object.fromEntries(db.prepare("SELECT key, value FROM site_content").all().map(row => [row.key, row.value]));
 app.set("trust proxy", 1);
 app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" }, contentSecurityPolicy: false }));
-app.use(cors({ origin: frontendUrl, credentials: true, methods: ["GET", "POST", "PUT", "OPTIONS"], allowedHeaders: ["Content-Type"] }));
+app.use(cors({ origin: frontendOrigin, credentials: true, methods: ["GET", "POST", "PUT", "OPTIONS"], allowedHeaders: ["Content-Type"] }));
 app.use(express.json({ limit: "30kb" }));
 app.use(session({
   name: "arp_admin_session",
