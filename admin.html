@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010"><title>Admin Dashboard | Atlanta Roleplay</title>
+  <link rel="icon" href="assets/ARP_Logo_Updated.webp"><link rel="stylesheet" href="styles.css">
+  <script src="api-config.js"></script><script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+<header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><img src="assets/ARP_Logo_Updated.webp" alt="" class="brand-logo"><span class="brand-name">ATLANTA <b>ROLEPLAY</b><small>ADMINISTRATION</small></span></a><a class="button button-secondary" href="index.html">Back to website</a></div></header>
+<main class="admin-main container">
+  <section class="page-hero admin-hero"><p class="eyebrow">RESTRICTED ACCESS</p><h1>Admin <span class="accent">dashboard.</span></h1><p class="page-intro">Review staff applications and manage selected website content. Sign in with an authorised Discord account.</p></section>
+  <section class="admin-login info-card" id="loginPanel"><h2>Discord authentication</h2><p>Access is checked against your roles in the Atlanta Roleplay Discord server.</p><button class="button button-primary" id="loginButton">Continue with Discord</button><p class="arp-form-message" id="adminMessage" role="status"></p></section>
+  <section id="dashboard" hidden>
+    <div class="admin-toolbar"><div><p class="eyebrow">CONTROL PANEL</p><h2>Welcome, <span id="adminName">staff</span></h2><p id="adminRoleText">Authorised administrator</p></div><button class="button button-secondary" id="logoutButton">Log out</button></div>
+    <div class="admin-tabs"><button class="admin-tab active" data-tab="applications">Applications <span id="pendingCount">0</span></button><button class="admin-tab" data-tab="content">Website content</button></div>
+    <section class="admin-section" id="applicationsTab"><div class="admin-section-heading"><div><h2>Staff applications</h2><p>Review an application, then accept or deny it. The applicant receives a Discord DM.</p></div><button class="button button-secondary" id="refreshButton">Refresh</button></div><div id="applicationList" class="admin-application-list"><p>Loading applications…</p></div></section>
+    <section class="admin-section" id="contentTab" hidden><h2>Website content</h2><p>These settings are stored by the backend and shown on supported website sections.</p><form id="contentForm" class="arp-form"><label>Homepage headline<input name="homeHeadline" maxlength="100" required></label><label>Homepage introduction<textarea name="homeIntro" rows="3" maxlength="500" required></textarea></label><label>Site-wide announcement<textarea name="announcement" rows="3" maxlength="500" placeholder="Leave blank to hide the announcement"></textarea></label><button class="button button-primary" type="submit">Save website content</button><p class="arp-form-message" id="contentMessage" role="status"></p></form></section>
+  </section>
+</main>
+<script src="site-content.js" defer></script>
+</body></html>
