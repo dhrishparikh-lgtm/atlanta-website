@@ -15,7 +15,7 @@ if (process.env.SESSION_SECRET.length < 32) throw new Error("SESSION_SECRET must
 const frontendUrl = process.env.FRONTEND_URL.replace(/\/$/, "");
 const frontendOrigin = new URL(frontendUrl).origin;
 const apiPublicUrl = process.env.API_PUBLIC_URL.replace(/\/$/, "");
-const adminRoleIds = new Set((process.env.ADMIN_ROLE_IDS || "1538727238483050664,1538727238441369677").split(",").map(x => x.trim()).filter(Boolean));
+const adminRoleIds = new Set((process.env.ADMIN_ROLE_IDS || "1538727238458155043,1538727238483050664").split(",").map(x => x.trim()).filter(Boolean));
 const app = express();
 const dataDir = path.dirname(process.env.DATABASE_PATH || "./data/arp.sqlite");
 fs.mkdirSync(dataDir, { recursive: true });
