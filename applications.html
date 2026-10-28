@@ -1,15 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#101010">
-  <meta name="description" content="Explore staff opportunities at Atlanta Roleplay and access the staff application form.">
+  <meta name="description" content="Apply to join the Atlanta Roleplay staff team.">
   <title>Applications | Atlanta Roleplay</title>
   <link rel="icon" href="assets/ARP_Logo_Updated.webp">
   <link rel="stylesheet" href="styles.css">
+  <script src="api-config.js"></script>
   <script src="script.js" defer></script>
+  <script src="applications.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -18,116 +19,54 @@
         <img src="assets/ARP_Logo_Updated.webp" alt="Atlanta Roleplay logo" class="brand-logo">
         <span class="brand-name">ATLANTA <b>ROLEPLAY</b><small>VC ONLY</small></span>
       </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="siteNav" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="siteNav" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav" id="siteNav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="leadership.html">Leadership</a>
-        <a href="rules.html">Rules</a>
-        <a href="applications.html">Applications</a>
-        <a href="partnerships.html">Partnerships</a>
-        <a href="statistics.html">Statistics</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="leadership.html">Leadership</a><a href="rules.html">Rules</a><a href="applications.html">Applications</a><a href="partnerships.html">Partnerships</a><a href="statistics.html">Statistics</a><a href="contact.html">Contact</a>
         <a class="nav-join" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
-
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">JOIN OUR TEAM</p>
-        <h1>Make a <span class="accent">difference.</span></h1>
-        <p class="page-intro">Interested in helping Atlanta Roleplay grow? Staff members help support the community, maintain standards, and make sessions run smoothly.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="application-feature">
-          <div class="application-copy">
-            <p class="eyebrow">STAFF APPLICATION</p>
-            <h2>Help build the community.</h2>
-            <p>We look for people who are mature, active, respectful, and willing to take responsibility. Previous experience can be useful, but professionalism and dedication matter too.</p>
-            <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeBAcwjs9XGPxuQ0y2x5U80lseV_AL56mv1acyF3jcIHUtsDg/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Open staff application ↗</a>
-          </div>
-          <div class="application-status">
-            <span class="status-mark"></span>
-            <p class="status-title">Before applying</p>
-            <ul>
-              <li>Read the community rules.</li>
-              <li>Answer all questions honestly.</li>
-              <li>Make sure your Discord details are correct.</li>
-              <li>Be patient while the team reviews applications.</li>
-            </ul>
-            <p class="small-note">Submitting an application does not guarantee acceptance.</p>
-          </div>
+    <section class="page-hero"><div class="container">
+      <p class="eyebrow">JOIN OUR TEAM</p><h1>Make a <span class="accent">difference.</span></h1>
+      <p class="page-intro">Interested in helping Atlanta Roleplay grow? Submit your staff application here on the official website. The leadership team will review it.</p>
+    </div></section>
+    <section class="section"><div class="container">
+      <div class="application-feature">
+        <div class="application-copy">
+          <p class="eyebrow">STAFF APPLICATION</p><h2>Help build the community.</h2>
+          <p>We look for people who are mature, active, respectful, and willing to take responsibility. Answer honestly and make sure your Discord user ID is correct.</p>
+          <p class="small-note">Submitting an application does not guarantee acceptance. You may receive the decision by Discord DM.</p>
         </div>
+        <aside class="application-status"><span class="status-mark"></span><p class="status-title">Before applying</p>
+          <ul><li>Read the community rules.</li><li>Use your Discord account's numeric user ID.</li><li>Give thoughtful, honest answers.</li><li>Check your Discord DMs for updates.</li></ul>
+        </aside>
       </div>
-    </section>
-
-    <section class="section section-muted">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">WHAT WE VALUE</p>
-          <h2>Good staff starts with good people.</h2>
-          <p>These qualities help our team support the community effectively.</p>
+      <form class="arp-form" id="applicationForm">
+        <div class="arp-form-heading"><p class="eyebrow">APPLICATION FORM</p><h2>Staff application</h2><p>Fields marked * are required.</p></div>
+        <div class="arp-form-grid">
+          <label>Roblox username *<input name="robloxUsername" required maxlength="32" autocomplete="username" placeholder="Your Roblox username"></label>
+          <label>Discord username *<input name="discordUsername" required maxlength="64" placeholder="Your Discord username"></label>
+          <label>Discord user ID *<input name="discordUserId" required inputmode="numeric" pattern="[0-9]{17,20}" maxlength="20" placeholder="17–20 digit ID"><small>Enable Developer Mode in Discord, then copy your user ID.</small></label>
+          <label>Age *<select name="ageRange" required><option value="">Select an age range</option><option>Under 13</option><option>13–15</option><option>16–17</option><option>18+</option></select></label>
+          <label>Timezone *<input name="timezone" required maxlength="80" placeholder="e.g. UTC+5:30"></label>
+          <label>Hours available per week *<select name="availability" required><option value="">Choose one</option><option>1–3 hours</option><option>4–7 hours</option><option>8–12 hours</option><option>13+ hours</option></select></label>
+          <label class="arp-full">Why do you want to become staff? *<textarea name="motivation" required minlength="30" maxlength="1500" rows="4" placeholder="Explain why you want to join the team (at least 30 characters)."></textarea></label>
+          <label class="arp-full">What would you do if a member broke a rule? *<textarea name="scenario" required minlength="30" maxlength="1500" rows="4" placeholder="Explain how you would handle the situation fairly."></textarea></label>
+          <label class="arp-full">Previous staff experience (optional)<textarea name="experience" maxlength="1200" rows="3" placeholder="Mention any relevant experience, or leave this blank."></textarea></label>
+          <label class="arp-full">Anything else we should know? (optional)<textarea name="additional" maxlength="1000" rows="3" placeholder="Optional"></textarea></label>
         </div>
-        <div class="card-grid three">
-          <article class="info-card">
-            <span class="card-number">01 / ACTIVITY</span>
-            <h3>Reliable participation</h3>
-            <p>Staff should make a reasonable effort to stay involved and communicate when they are unavailable.</p>
-          </article>
-          <article class="info-card">
-            <span class="card-number">02 / FAIRNESS</span>
-            <h3>Professional conduct</h3>
-            <p>Moderation decisions should be handled calmly, consistently, and without favouritism.</p>
-          </article>
-          <article class="info-card">
-            <span class="card-number">03 / TEAMWORK</span>
-            <h3>Working together</h3>
-            <p>Good staff members cooperate with the rest of the team and ask for guidance when needed.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="notice-panel">
-          <strong>Application reminder:</strong> Apply only through the official form linked on this page. Staff recruitment, availability, and requirements may change, so check Discord for current announcements.
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta-panel">
-          <div>
-            <p class="eyebrow">QUESTIONS?</p>
-            <h2>Contact the team.</h2>
-            <p>Join our Discord to ask about recruitment and current opportunities.</p>
-          </div>
-          <a class="button button-secondary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord ↗</a>
-        </div>
-      </div>
-    </section>
+        <label class="arp-consent"><input type="checkbox" name="confirm" required> I confirm that the information above is accurate and that I will follow Atlanta Roleplay's rules.</label>
+        <button class="button button-primary" type="submit" id="applicationSubmit">Submit application</button>
+        <p class="arp-form-message" id="applicationMessage" role="status" aria-live="polite"></p>
+      </form>
+    </div></section>
+    <section class="section section-muted"><div class="container">
+      <div class="section-heading"><p class="eyebrow">WHAT WE VALUE</p><h2>Good staff starts with good people.</h2><p>Reliable participation, professional conduct, and teamwork help us support the community.</p></div>
+      <div class="card-grid three"><article class="info-card"><span class="card-number">01 / ACTIVITY</span><h3>Reliable participation</h3><p>Communicate when you are unavailable and make a reasonable effort to stay involved.</p></article><article class="info-card"><span class="card-number">02 / FAIRNESS</span><h3>Professional conduct</h3><p>Handle moderation calmly, consistently, and without favouritism.</p></article><article class="info-card"><span class="card-number">03 / TEAMWORK</span><h3>Working together</h3><p>Cooperate with the team and ask for guidance when needed.</p></article></div>
+    </div></section>
+    <section class="section"><div class="container"><div class="cta-panel"><div><p class="eyebrow">QUESTIONS?</p><h2>Contact the team.</h2><p>Join our Discord to ask about recruitment and current opportunities.</p></div><a class="button button-secondary" href="https://discord.gg/NE2Emkhc2H" target="_blank" rel="noopener noreferrer">Join Discord ↗</a></div></div></section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="footer-brand" href="index.html">ATLANTA ROLEPLAY <span>VC ONLY</span></a>
-      <p>Built for realistic roleplay. Powered by community.</p>
-      <div class="footer-links">
-        <a href="about.html">About</a>
-        <a href="rules.html">Rules</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <p class="copyright">© <span data-year></span> Atlanta Roleplay. All rights reserved.</p>
-    </div>
-  </footer>
+  <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="index.html">ATLANTA ROLEPLAY <span>VC ONLY</span></a><p>Built for realistic roleplay. Powered by community.</p><div class="footer-links"><a href="about.html">About</a><a href="rules.html">Rules</a><a href="contact.html">Contact</a></div><p class="copyright">© <span data-year></span> Atlanta Roleplay. All rights reserved.</p></div></footer>
 </body>
 </html>
