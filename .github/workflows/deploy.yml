@@ -1,4 +1,3 @@
-```yaml
 name: Deploy Atlanta Roleplay Website
 
 on:
@@ -20,18 +19,19 @@ jobs:
   build:
     name: Build Website
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-
+      - name: Prepare public website files
+        run: |
+          mkdir -p dist
+          rsync -av --exclude='.git/' --exclude='.github/' --exclude='backend/' --exclude='README.md' ./ dist/
       - name: Upload Website Files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
 
   deploy:
     name: Deploy Website
@@ -40,9 +40,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-```
