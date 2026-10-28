@@ -24,8 +24,7 @@ db.exec(`
 CREATE TABLE IF NOT EXISTS applications (
   id TEXT PRIMARY KEY, robloxUsername TEXT NOT NULL, discordUsername TEXT NOT NULL,
   discordUserId TEXT NOT NULL, ageRange TEXT NOT NULL, timezone TEXT NOT NULL,
-  availability TEXT NOT NULL, motivation TEXT NOT NULL, scenario TEXT NOT NULL,
-  experience TEXT NOT NULL DEFAULT '', additional TEXT NOT NULL DEFAULT '',
+  availability TEXT NOT NULL, preferredArea TEXT NOT NULL DEFAULT 'Not specified', priorStaff TEXT NOT NULL DEFAULT 'Not specified', rulesRead TEXT NOT NULL DEFAULT 'Not specified', motivation TEXT NOT NULL, strengths TEXT NOT NULL DEFAULT '', scenario TEXT NOT NULL, friendScenario TEXT NOT NULL DEFAULT '', teamwork TEXT NOT NULL DEFAULT '', activityNotes TEXT NOT NULL DEFAULT '', experience TEXT NOT NULL DEFAULT '', additional TEXT NOT NULL DEFAULT '',
   status TEXT NOT NULL DEFAULT 'pending', decisionNote TEXT NOT NULL DEFAULT '',
   createdAt TEXT NOT NULL, reviewedAt TEXT, reviewedBy TEXT, dmSent INTEGER NOT NULL DEFAULT 0
 );
@@ -138,9 +137,16 @@ app.post("/api/applications", (req, res) => {
     validateString(body.ageRange, "Age range", 20),
     validateString(body.timezone, "Timezone", 80),
     validateString(body.availability, "Availability", 40),
-    validateString(body.motivation, "Motivation", 1500, 30),
-    validateString(body.scenario, "Scenario response", 1500, 30),
-    validateString(body.experience ?? "", "Experience", 1200, 0),
+    validateString(body.preferredArea, "Preferred staff area", 80),
+    validateString(body.priorStaff, "Previous staff experience selection", 10),
+    validateString(body.rulesRead, "Rules acknowledgement", 40),
+    validateString(body.motivation, "Motivation", 2000, 50),
+    validateString(body.strengths, "Strengths", 1500, 40),
+    validateString(body.scenario, "Scenario response", 2000, 50),
+    validateString(body.friendScenario, "Friend scenario response", 1500, 40),
+    validateString(body.teamwork, "Teamwork response", 1500, 40),
+    validateString(body.experience ?? "", "Experience", 1500, 10),
+    validateString(body.activityNotes ?? "", "Activity notes", 1000, 0),
     validateString(body.additional ?? "", "Additional information", 1000, 0)
   ].filter(Boolean);
   if (checks.length) return res.status(400).json({ error: checks[0] });
@@ -149,12 +155,14 @@ app.post("/api/applications", (req, res) => {
   const recent = db.prepare("SELECT COUNT(*) AS count FROM applications WHERE discordUserId = ? AND createdAt > ?").get(discordUserId, new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
   if (recent.count >= 2) return res.status(429).json({ error: "Only two applications per Discord account are allowed every 24 hours." });
   const id = crypto.randomUUID();
-  db.prepare(`INSERT INTO applications (id, robloxUsername, discordUsername, discordUserId, ageRange, timezone, availability, motivation, scenario, experience, additional, createdAt)
-    VALUES (@id, @robloxUsername, @discordUsername, @discordUserId, @ageRange, @timezone, @availability, @motivation, @scenario, @experience, @additional, @createdAt)`).run({
+  db.prepare(`INSERT INTO applications (id, robloxUsername, discordUsername, discordUserId, ageRange, timezone, availability, preferredArea, priorStaff, rulesRead, motivation, strengths, scenario, friendScenario, teamwork, activityNotes, experience, additional, createdAt)
+    VALUES (@id, @robloxUsername, @discordUsername, @discordUserId, @ageRange, @timezone, @availability, @preferredArea, @priorStaff, @rulesRead, @motivation, @strengths, @scenario, @friendScenario, @teamwork, @activityNotes, @experience, @additional, @createdAt)`).run({
       id, robloxUsername: body.robloxUsername.trim(), discordUsername: body.discordUsername.trim(), discordUserId,
       ageRange: body.ageRange.trim(), timezone: body.timezone.trim(), availability: body.availability.trim(),
-      motivation: body.motivation.trim(), scenario: body.scenario.trim(), experience: (body.experience || "").trim(),
-      additional: (body.additional || "").trim(), createdAt: new Date().toISOString()
+      preferredArea: body.preferredArea.trim(), priorStaff: body.priorStaff.trim(), rulesRead: body.rulesRead.trim(),
+      motivation: body.motivation.trim(), strengths: body.strengths.trim(), scenario: body.scenario.trim(),
+      friendScenario: body.friendScenario.trim(), teamwork: body.teamwork.trim(), activityNotes: (body.activityNotes || "").trim(),
+      experience: (body.experience || "").trim(), additional: (body.additional || "").trim(), createdAt: new Date().toISOString()
     });
   res.status(201).json({ ok: true, id });
 });
